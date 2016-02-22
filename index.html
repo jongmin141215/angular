@@ -9,13 +9,27 @@
   </head>
   <body>
     <div ng-controller='MyController'>
+      <div class='search'>
+         <h1>Artist directory</h1>
+         <label>Artists</label>
+         <input ng-model='query' placeholder="search for artists" autofocus>
+         <lable>by:
+           <select ng-model='artistOrder'>
+             <option value='name'>Name</option>
+             <option value='reknown'>Reknown</option>
+           </select>
+         </label>
+         <label><input type='radio' ng-model='direction' name='direction' checked>Asecending</label>
+         <label><input type='radio' ng-model='direction' name='direction' value='reverse'>Descending</label>
+
+
+      </div>
       <ul class='artistlist'>
-        <li ng-repeat='item in artists'>
+        <li ng-repeat='item in artists | filter: query | orderBy: artistOrder:direction'>
           <img class='profile' ng-src='images/jongmin.jpg'>
           <div class='info'>
             <h2>{{ item.name }}</h2>
-            <h3>{{ item.reknown  }}</h3>
-            <!-- {{ item.bio }} -->
+            <h3>{{ item.reknown }}</h3>
           </div>
         </li>
       </ul>
