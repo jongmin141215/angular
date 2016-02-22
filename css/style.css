@@ -1,0 +1,23 @@
+body {
+  background-color: #009999;
+}
+.profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  display: inline-block;
+}
+ul {
+  list-style-type: none;
+}
+.artistlist {
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
+.info h2 {
+  color: #e1ab34;
+}
+.info h3 {
+  color: white;
+}
